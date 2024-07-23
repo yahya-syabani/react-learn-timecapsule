@@ -39,9 +39,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  :hover {
+  /* :hover {
     color: #0277b5;
-  }
+  } */
 }
 
 .navbar_link {

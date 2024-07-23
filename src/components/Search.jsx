@@ -4,7 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 function Search() {
   return (
     <div>
-      <SearchIcon fontSize="large" />
+      <SearchIcon />
     </div>
   );
 }
