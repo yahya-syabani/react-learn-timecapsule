@@ -2,12 +2,16 @@ export const darkTheme = {
   bg: "#1C1C27",
   text: "#FFFFFF",
   texthover: "#70D2F6",
+  footerbg: "#0277b5",
+  icon: "#70D2F6",
 };
 
 export const lightTheme = {
   bg: "#FFFFFF",
   text: "#000000",
   texthover: "#0277b5",
+  footerbg: "#fffbf8",
+  icon: "#FF9898",
 };
 
 // pink #FF9898

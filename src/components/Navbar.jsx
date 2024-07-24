@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import mainLogo from "../assets/Logo.png";
-import Button from "./Button";
 import {
   Nav,
   NavLink,
@@ -17,18 +16,19 @@ import {
   SearchContainer,
 } from "./NavbarStyledComponent";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
 import Search from "@mui/icons-material/Search";
+import { darkTheme, lightTheme } from "../utils/Themes";
 import { useTheme } from "styled-components";
+import { Switch } from "@mui/material";
 // import "./Navbar.css";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const theme = useTheme();
   return (
     <Nav>
       <NavbarContainer>
         <NavLogo>
-          <Logo src={mainLogo}></Logo>
+          <Logo src={mainLogo} />
           <LogoText>
             <Time>Time</Time>
             Capsule
@@ -44,49 +44,15 @@ function Navbar() {
           <NavLink to="/Contacts">Contacts</NavLink>
           <NavLink>
             <SearchContainer>
-              <Search />
+              <SearchIcon />
             </SearchContainer>
           </NavLink>
           <NavLink>
             <ButtonContainer>
-              <Button />
+              <Switch />
             </ButtonContainer>
           </NavLink>
         </NavItems>
-        {isOpen && (
-          <MobileMenu isOpen={isOpen}>
-            <MobileLink
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Home
-            </MobileLink>
-            <MobileLink
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              About
-            </MobileLink>
-            <MobileLink
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Projects
-            </MobileLink>
-            <MobileLink
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              Contacts
-            </MobileLink>
-            {/* <DarkModeButton />
-            <SearchButton /> */}
-          </MobileMenu>
-        )}
       </NavbarContainer>
     </Nav>
 

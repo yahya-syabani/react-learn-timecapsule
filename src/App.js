@@ -9,7 +9,7 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { darkTheme, lightTheme } from "./utils/Themes";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -18,8 +18,13 @@ const Body = styled.div`
 `;
 
 function App() {
+  const [theme, setTheme] = useState(lightTheme);
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <Router>
         <Navbar />
         <Body>
@@ -29,7 +34,6 @@ function App() {
               element={
                 <>
                   <Home />
-                  <Footer />
                 </>
               }
             />
@@ -38,7 +42,6 @@ function App() {
               element={
                 <>
                   <Home />
-                  <Footer />
                 </>
               }
             />
@@ -47,7 +50,6 @@ function App() {
               element={
                 <>
                   <About />
-                  <Footer />
                 </>
               }
             />
@@ -56,7 +58,6 @@ function App() {
               element={
                 <>
                   <Projects />
-                  <Footer />
                 </>
               }
             />
@@ -65,7 +66,6 @@ function App() {
               element={
                 <>
                   <Contacts />
-                  <Footer />
                 </>
               }
             />
