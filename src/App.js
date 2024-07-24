@@ -15,6 +15,7 @@ const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
   overflow-x: hidden;
+  transition: 0.8s all ease;
 `;
 
 function App() {
@@ -24,10 +25,11 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
+      <button onClick={toggleTheme} style={{ width: 50, height: 50 }} />
       <Router>
-        <Navbar />
         <Body>
+          <Navbar />
           <Routes>
             <Route
               path="*"
@@ -70,6 +72,7 @@ function App() {
               }
             />
           </Routes>
+          <Footer />
         </Body>
       </Router>
     </ThemeProvider>

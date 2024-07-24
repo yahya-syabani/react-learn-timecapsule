@@ -2,7 +2,6 @@ import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.div`
-  background-color: ${({ theme }) => theme.bg};
   height: 10rem;
   display: flex;
   align-items: center;
@@ -71,7 +70,6 @@ export const NavLink = styled(LinkR)`
   color: ${({ theme }) => theme.text};
   font-weight: 400;
   font-size: larger;
-  transition: all 0.2s ease-in-out;
   align-items: center;
   text-decoration: none;
   cursor: pointer;

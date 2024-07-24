@@ -1,15 +1,54 @@
-export const Bio = {
-  name: "Rishav Chanda",
-  roles: [
-    "Full Stack Developer",
-    "Android Developer",
-    "UI/UX Designer",
-    "Programmer",
-  ],
-  description: "I am a motivated and versatile individual, alwayhings.",
-};
+export const partners = [
+  {
+    id: 0,
+    title: "Pijar",
+    img: "https://seeklogo.com/images/P/pijar-foundation-logo-5FA1DB37F9-seeklogo.com.png",
+  },
 
-export const Story = [
+  {
+    id: 1,
+    title: "Kecipir",
+    img: "https://kecipir.id/cdn/shop/files/Logo_Kecipir_ID_Light_small_9026c9a4-b423-4443-a4ca-77a8c304489b.png?v=1718338072&width=500",
+  },
+
+  {
+    id: 2,
+    title: "Cimb",
+    img: "https://iconape.com/wp-content/png_logo_vector/cimb-logo.png",
+  },
+
+  {
+    id: 3,
+    title: "Propan",
+    img: "https://karir.propanraya.com/assets/images/propan.png",
+  },
+
+  {
+    id: 4,
+    title: "Traveloka",
+    img: "https://d1785e74lyxkqq.cloudfront.net/_next/static/v2/9/97f3e7a54e9c6987283b78e016664776.svg",
+  },
+
+  {
+    id: 5,
+    title: "Google",
+    img: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg",
+  },
+
+  {
+    id: 6,
+    title: "Yelp",
+    img: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg",
+  },
+
+  {
+    id: 7,
+    title: "Gojek",
+    img: "https://upload.wikimedia.org/wikipedia/commons/1/18/Gojek_logo_2022.svg",
+  },
+];
+
+export const story = [
   {
     id: 0,
     date: "May 2024",
@@ -34,7 +73,7 @@ export const Story = [
   },
 ];
 
-export const TheLeader = [
+export const theLeader = [
   {
     id: 0,
     name: "Steve Jobs",
@@ -60,13 +99,15 @@ export const TheLeader = [
   },
 ];
 
-export const Project = [
+export const project = [
   {
     id: 0,
     title: "The Blue Mountain",
     description:
       "A personalized travel experience. Make hiking more memorable.",
+  },
 
+  {
     id: 1,
     title: "The Blue Mountain",
     description: "An agricultural platform to help farmers.",

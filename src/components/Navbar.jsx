@@ -14,14 +14,10 @@ import {
   LogoText,
   ButtonContainer,
   SearchContainer,
-} from "./NavbarStyledComponent";
+} from "./NavbarStyle";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import Search from "@mui/icons-material/Search";
-import { darkTheme, lightTheme } from "../utils/Themes";
-import { useTheme } from "styled-components";
 import { Switch } from "@mui/material";
-// import "./Navbar.css";
 
 function Navbar() {
   return (
