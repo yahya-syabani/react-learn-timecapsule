@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import mainLogo from "../assets/Logo.png";
 import {
   Nav,
@@ -7,8 +7,6 @@ import {
   NavLogo,
   NavItems,
   MobileIcon,
-  MobileMenu,
-  MobileLink,
   Logo,
   Time,
   LogoText,
@@ -18,8 +16,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { Switch } from "@mui/material";
+import { useTheme } from "../utils/ThemeProvider";
 
 function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   return (
     <Nav>
       <NavbarContainer>
@@ -34,55 +34,27 @@ function Navbar() {
           <MenuIcon />
         </MobileIcon>
         <NavItems>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="About">About</NavLink>
-          <NavLink to="/Projects">Project</NavLink>
-          <NavLink to="/Contacts">Contacts</NavLink>
-          <NavLink>
-            <SearchContainer>
-              <SearchIcon />
-            </SearchContainer>
+          <NavLink exact to="/">
+            Home
           </NavLink>
-          <NavLink>
-            <ButtonContainer>
-              <Switch />
-            </ButtonContainer>
+          <NavLink exact to="About">
+            About
           </NavLink>
+          <NavLink exact to="/Projects">
+            Project
+          </NavLink>
+          <NavLink exact to="/Contacts">
+            Contacts
+          </NavLink>
+          <SearchContainer>
+            <SearchIcon />
+          </SearchContainer>
+          <ButtonContainer>
+            <Switch onClick={toggleTheme} />
+          </ButtonContainer>
         </NavItems>
       </NavbarContainer>
     </Nav>
-
-    // <div className="navbar">
-    //   <div className="navbar_left">
-    //     <Link className="navbar_link" to="/">
-    //       <img className="navbar_logo" src={mainLogo} alt="Time Capsule" />
-    //       <div class Name="navbar_logoname">
-    //         <span className="navbar_logoname1">Time</span>
-    //         <span className="navbar_logoname2">Capsule</span>
-    //       </div>
-    //     </Link>
-    //   </div>
-    //   <div className="navbar_right">
-    //     <Link className="navbar_link" to="/">
-    //       Home
-    //     </Link>
-    //     <Link className="navbar_link" to="/About">
-    //       About
-    //     </Link>
-    //     <Link className="navbar_link" to="/Projects">
-    //       Projects
-    //     </Link>
-    //     <Link className="navbar_link" to="/Contacts">
-    //       Contacts
-    //     </Link>
-    //     <div className="navbar_buttonicon">
-    //       <Button />
-    //     </div>
-    //     <div className="navbar_searchicon">
-    //       <Search />
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 

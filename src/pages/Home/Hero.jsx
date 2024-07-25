@@ -3,19 +3,13 @@ import styled from "styled-components";
 import { Typewriter } from "react-simple-typewriter";
 
 export const ContentContainer = styled.div`
-  height: 750px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   color: ${({ theme }) => theme.text};
-  @media (max-width: 960px) {
-    padding: 66px 16px;
-  }
-  @media (max-width: 640) {
-    padding: 32px 16px;
-  }
   z-index: 2;
   transition: 0.8s all ease;
 `;
@@ -23,11 +17,20 @@ export const ContentContainer = styled.div`
 export const Home = styled.div`
   font-size: 6rem;
   font-weight: 600;
+  text-align: center;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 export const TypewriterContainer = styled.span`
   font-size: 2rem;
   height: 50px;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 function Hero() {

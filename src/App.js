@@ -5,31 +5,23 @@ import Home from "../src/pages/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
 import styled from "styled-components";
-import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { darkTheme, lightTheme } from "./utils/Themes";
 import Footer from "./components/Footer";
-import { useState, useEffect } from "react";
+import ThemeProvider from "./utils/ThemeProvider";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
   overflow-x: hidden;
-  transition: 0.8s all ease;
+  transition: 0.3s all ease;
 `;
 
 function App() {
-  const [theme, setTheme] = useState(lightTheme);
-  const toggleTheme = () => {
-    setTheme(theme === lightTheme ? darkTheme : lightTheme);
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <button onClick={toggleTheme} style={{ width: 50, height: 50 }} />
+    <ThemeProvider>
       <Router>
+        <Navbar />
         <Body>
-          <Navbar />
           <Routes>
             <Route
               path="*"
@@ -72,8 +64,8 @@ function App() {
               }
             />
           </Routes>
-          <Footer />
         </Body>
+        <Footer />
       </Router>
     </ThemeProvider>
   );

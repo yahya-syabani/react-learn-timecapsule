@@ -8,7 +8,8 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  gap: 1rem;
+  gap: 10rem;
+  transition: 0.8s all ease;
 `;
 
 function Home() {

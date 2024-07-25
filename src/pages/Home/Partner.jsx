@@ -9,12 +9,17 @@ export const PartnerContainer = styled.div`
   flex-direction: column;
   align-items: center;
   transition: 0.8s all ease;
+  margin-bottom: 100px;
 `;
 
 export const Title = styled.div`
   font-size: 5rem;
   font-weight: 600;
   text-align: center;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 export const PartnerLogoContainer = styled.div`
@@ -29,20 +34,36 @@ export const PartnerLogo = styled.img`
   height: 200px;
   object-fit: contain;
   margin: 60px;
+  &:hover {
+    scale: 1.3;
+    cursor: pointer;
+  }
+  transition: 0.3s all ease;
+
+  @media screen and (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media (min-width: ${({ theme }) => theme.darkTheme}) {
+    width: 500px;
+  }
 `;
 
 function Partner() {
   return (
-    <div>
-      <PartnerContainer>
-        <Title>Our Partner</Title>
-        <PartnerLogoContainer>
-          {partners.map((partner) => (
-            <PartnerLogo src={partner.img} />
-          ))}
-        </PartnerLogoContainer>
-      </PartnerContainer>
-    </div>
+    <PartnerContainer>
+      <Title>Our Partner</Title>
+      <PartnerLogoContainer>
+        {partners.map((partner) => (
+          <PartnerLogo
+            src={partner.img}
+            onClick={() => {
+              window.open(partner.link, "_blank");
+            }}
+          />
+        ))}
+      </PartnerLogoContainer>
+    </PartnerContainer>
   );
 }
 

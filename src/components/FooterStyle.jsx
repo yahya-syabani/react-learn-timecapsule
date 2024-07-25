@@ -18,6 +18,7 @@ export const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const FooterLogo = styled.span`
   scale: 1.1;
   display: flex;
@@ -51,6 +52,7 @@ export const FooterInformation = styled.div`
   margin-right: 2rem;
   width: 20rem;
 `;
+
 export const Email = styled.div`
   display: flex;
   align-items: center;
