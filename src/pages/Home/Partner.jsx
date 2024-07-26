@@ -3,6 +3,7 @@ import { partners } from "../../utils/Data";
 import styled from "styled-components";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
+import PartnerBackground from "./PartnerBackground";
 
 export const PartnerContainer = styled.div`
   color: ${({ theme }) => theme.text};
@@ -30,6 +31,7 @@ export const PartnerLogoContainer = styled.div`
   width: 90%;
   flex-wrap: wrap;
   justify-content: center;
+  z-index: 1;
 `;
 
 export const PartnerLogo = styled.img`
@@ -48,20 +50,6 @@ export const PartnerLogo = styled.img`
     height: 150px;
   }
 `;
-
-export const BackgroundContainer = styled.div`
-  width: 100%;
-  position: absolute;
-  display: flex;
-`;
-
-export const Icon1 = styled.div`
-  position: absolute;
-  z-index: 0;
-  margin-left: -7%;
-  margin-top: 5%;
-`;
-
 function Partner() {
   const ref = useRef(null);
   const isInView = useInView(ref, { threshold: 0.1 });
@@ -78,6 +66,7 @@ function Partner() {
 
   return (
     <PartnerContainer>
+      <PartnerBackground />
       <Title>Our Partner</Title>
       <PartnerLogoContainer>
         {partners.map((partner) => (
@@ -89,21 +78,6 @@ function Partner() {
           />
         ))}
       </PartnerLogoContainer>
-      <BackgroundContainer>
-        <Icon1>
-          <motion.div ref={ref} animate={controls}>
-            <svg
-              width="200"
-              height="200"
-              viewBox="0 0 100 100"
-              transform="scale(1.18)"
-            >
-              <polygon points="50,10 100,100 0,100" fill="#ff9a99" />
-            </svg>
-          </motion.div>
-        </Icon1>
-        <motion.div ref={ref} animate={controls}></motion.div>
-      </BackgroundContainer>
     </PartnerContainer>
   );
 }

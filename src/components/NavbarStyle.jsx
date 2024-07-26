@@ -30,7 +30,7 @@ export const NavbarContainer = styled.div`
   }
 `;
 
-export const NavLogo = styled.span`
+export const NavLogo = styled(LinkR)`
   width: 5rem;
   margin-left: 3rem;
   display: flex;
@@ -39,6 +39,7 @@ export const NavLogo = styled.span`
   align-items: center;
   text-decoration: none;
   color: ${({ theme }) => theme.text};
+  cursor: pointer;
 `;
 
 export const Logo = styled.img`
@@ -64,9 +65,10 @@ export const NavItems = styled.div`
   list-style: none;
   margin-right: 4rem;
   transition: 0.3s all ease;
-  :hover {
+  &:hover {
     color: ${({ theme }) => theme.texthover};
   }
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -79,6 +81,12 @@ export const NavLink = styled(LinkR)`
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.texthover};
+  }
+  &.active {
+    color: ${({ theme }) => theme.texthover};
+  }
 `;
 
 export const ButtonContainer = styled.div`

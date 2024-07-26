@@ -93,9 +93,17 @@ export const BackgroundContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
+  margin-top: 100px;
   z-index: -1;
   justify-content: space-around;
   gap: 40%;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    margin-left: -10px;
+    scale: 0.8;
+    align-items: flex-end;
+    margin-top: 50px;
+  }
 `;
 
 export const Icon1 = styled.div`

@@ -54,6 +54,9 @@ export const BackgroundContainer = styled.div`
   display: flex;
   gap: 10%;
   z-index: -2;
+  @media screen and (max-width: 768px) {
+    margin-top: -30px;
+  }
 `;
 
 export const Icon1 = styled.div`

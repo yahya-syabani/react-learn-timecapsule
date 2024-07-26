@@ -24,6 +24,7 @@ function App() {
         <Body>
           <Routes>
             <Route
+              exact
               path="*"
               element={
                 <>
@@ -32,6 +33,7 @@ function App() {
               }
             />
             <Route
+              exact
               path="/"
               element={
                 <>
@@ -40,6 +42,7 @@ function App() {
               }
             />
             <Route
+              exact
               path="/about"
               element={
                 <>
@@ -48,6 +51,7 @@ function App() {
               }
             />
             <Route
+              exact
               path="/projects"
               element={
                 <>
@@ -56,6 +60,7 @@ function App() {
               }
             />
             <Route
+              exact
               path="/contacts"
               element={
                 <>

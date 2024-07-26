@@ -14,7 +14,7 @@ export const HeroContainer = styled.span`
   transition: 0.3s all ease;
   gap: 50px;
   @media screen and (max-width: 768px) {
-    margin-left: 3rem;
+    margin-left: 0rem;
   }
 `;
 
@@ -26,6 +26,8 @@ export const AboutUs = styled.span`
   transition: 0.3s all ease;
   @media screen and (max-width: 768px) {
     font-size: 5rem;
+    margin-left: 0rem;
+    text-align: center;
   }
 `;
 
@@ -36,6 +38,9 @@ export const Paragraph = styled.span`
   transition: 0.3s all ease;
   @media screen and (max-width: 768px) {
     font-size: 1.3rem;
+    margin-left: 0rem;
+    text-align: center;
+    width: 100%;
   }
 `;
 
@@ -43,17 +48,35 @@ export const BackgroundContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
-  z-index: -1;
+  margin-top: 100px;
+  z-index: -2;
   justify-content: space-around;
   gap: 40%;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    margin-left: -10px;
+    scale: 0.8;
+    align-items: flex-end;
+    margin-top: 50px;
+  }
 `;
 
 export const Icon1 = styled.div`
   margin-bottom: 300px;
+  transition: 0.3s all ease;
+  z-index: -2;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 400px;
+  }
 `;
 
 export const Icon2 = styled.div`
   margin-top: 320px;
+  transition: 0.3s all ease;
+  z-index: -2;
+  @media screen and (max-width: 768px) {
+    margin-top: 450px;
+  }
 `;
 
 function Hero() {

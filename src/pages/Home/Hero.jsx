@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
+import Background from "./HeroBackground";
 
 export const ContentContainer = styled.div`
   height: 600px;
@@ -37,58 +37,11 @@ export const TypewriterContainer = styled.span`
   }
 `;
 
-export const BackgroundContainer = styled.div`
-  margin-top: -60px;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  display: flex;
-  gap: 60%;
-`;
-
-export const Icon1 = styled.div``;
-
-export const Icon2 = styled.div``;
-
 function Hero() {
   return (
     <ContentContainer>
+      <Background />
       <Home>What time is it?</Home>
-      <BackgroundContainer>
-        <motion.div
-          initial={{ x: "-50vw" }}
-          animate={{ x: "0", rotate: 360 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-        >
-          <Icon1>
-            <svg
-              width="200"
-              height="200"
-              viewBox="0 0 100 100"
-              transform="scale(1.18)"
-            >
-              <polygon points="50,10 100,100 0,100" fill={"#ff9a99"} />
-            </svg>
-          </Icon1>
-        </motion.div>
-        <motion.div
-          initial={{ x: "50vw" }}
-          animate={{ x: "0", rotate: 360 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-        >
-          <Icon2>
-            <svg
-              width="200"
-              height="200"
-              viewBox="0 0 100 100"
-              transform="scale(1.18) rotate(180, 0, 0)"
-            >
-              <polygon points="50,10 100,100 0,100" fill="#8cd3f7" />
-            </svg>
-          </Icon2>
-        </motion.div>
-      </BackgroundContainer>
       <TypewriterContainer>
         <Typewriter words={["It's time to change"]} loop={0} />
       </TypewriterContainer>

@@ -34,6 +34,7 @@ export const ContentContainer = styled.div`
   width: 90%;
   justify-content: center;
   gap: 80px;
+  align-items: center;
   @media screen and (max-width: 768px) {
     flex-wrap: wrap;
     gap: 50px;
@@ -51,6 +52,7 @@ export const ImageContainer = styled.div`
   width: 400px;
   height: 300px;
   position: relative;
+  align-items: center;
   &:hover {
     scale: 1.02;
   }
@@ -114,9 +116,17 @@ export const BackgroundContainer = styled.div`
   position: absolute;
   width: 100%;
   display: flex;
+  margin-top: 100px;
   z-index: -1;
   justify-content: space-around;
   gap: 40%;
+  transition: 0.3s all ease;
+  @media screen and (max-width: 768px) {
+    margin-left: -10px;
+    scale: 0.8;
+    align-items: flex-end;
+    margin-top: 250px;
+  }
 `;
 
 export const Icon1 = styled.div`

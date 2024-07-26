@@ -1,6 +1,7 @@
 import EmailIcon from "@mui/icons-material/Email";
 import PlaceIcon from "@mui/icons-material/Place";
 import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
 
 export const Foot = styled.div`
   background-color: ${({ theme }) => theme.footerbg};
@@ -19,13 +20,15 @@ export const FooterContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const FooterLogo = styled.span`
+export const FooterLogo = styled(LinkR)`
   scale: 1.1;
   display: flex;
   align-items: center;
   width: 5rem;
   margin-left: 2rem;
   color: ${({ theme }) => theme.text};
+  cursor: pointer;
+  text-decoration: none;
 `;
 export const Logo = styled.img`
   object-fit: contain;

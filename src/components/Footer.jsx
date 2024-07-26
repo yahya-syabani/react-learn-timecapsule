@@ -15,10 +15,15 @@ import {
 import { Logo, LogoText, Time } from "./NavbarStyle";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
   return (
     <Foot>
       <FooterContainer>
-        <FooterLogo>
+        <FooterLogo onClick={scrollToTop} exact to="/">
           <Logo src={mainLogo}></Logo>
           <LogoText>
             <Time>Time</Time>

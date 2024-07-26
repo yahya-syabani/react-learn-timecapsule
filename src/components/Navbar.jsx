@@ -20,10 +20,16 @@ import { useTheme } from "../utils/ThemeProvider";
 
 function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo>
+        <NavLogo onClick={scrollToTop} exact to="/">
           <Logo src={mainLogo} />
           <LogoText>
             <Time>Time</Time>
@@ -34,16 +40,16 @@ function Navbar() {
           <MenuIcon />
         </MobileIcon>
         <NavItems>
-          <NavLink exact to="/">
+          <NavLink onClick={scrollToTop} exact to="/">
             Home
           </NavLink>
-          <NavLink exact to="About">
+          <NavLink onClick={scrollToTop} exact to="About">
             About
           </NavLink>
-          <NavLink exact to="/Projects">
+          <NavLink onClick={scrollToTop} exact to="/Projects">
             Project
           </NavLink>
-          <NavLink exact to="/Contacts">
+          <NavLink onClick={scrollToTop} exact to="/Contacts">
             Contacts
           </NavLink>
           <SearchContainer>
