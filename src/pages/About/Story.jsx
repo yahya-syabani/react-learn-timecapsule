@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { story } from "../../utils/Data";
+import { motion } from "framer-motion";
 
 export const StoryContainer = styled.div`
   color: ${({ theme }) => theme.text};
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 100px;
   gap: 50px;
+  width: 100%;
+  z-index: 2;
 `;
 
 export const Title = styled.span`
@@ -87,6 +89,23 @@ export const TimelineDescription = styled.span`
   }
 `;
 
+export const BackgroundContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: -1;
+  justify-content: space-around;
+  gap: 40%;
+`;
+
+export const Icon1 = styled.div`
+  margin-bottom: 400px;
+`;
+
+export const Icon2 = styled.div`
+  margin-top: 350px;
+`;
+
 function Story() {
   return (
     <StoryContainer>
@@ -101,6 +120,40 @@ function Story() {
           </TimelineComponent>
         ))}
       </TimelineContainer>
+      <BackgroundContainer>
+        <motion.div
+          initial={{ x: "-50vw" }}
+          animate={{ x: "0", rotate: 360 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
+          <Icon1>
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 100 100"
+              transform="scale(1.18)"
+            >
+              <polygon points="50,10 100,100 0,100" fill={"#ff9a99"} />
+            </svg>
+          </Icon1>
+        </motion.div>
+        <motion.div
+          initial={{ x: "50vw" }}
+          animate={{ x: "0", rotate: 360 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
+          <Icon2>
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 100 100"
+              transform="scale(1.18) rotate(180, 0, 0)"
+            >
+              <polygon points="50,10 100,100 0,100" fill="#8cd3f7" />
+            </svg>
+          </Icon2>
+        </motion.div>
+      </BackgroundContainer>
     </StoryContainer>
   );
 }

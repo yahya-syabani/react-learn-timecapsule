@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { project } from "../../utils/Data";
+import { motion } from "framer-motion";
 
 export const HeroContainer = styled.div`
   height: 750px;
@@ -10,6 +11,7 @@ export const HeroContainer = styled.div`
   flex-direction: column;
   color: ${({ theme }) => theme.text};
   transition: 0.3s all ease;
+  z-index: 1;
 `;
 
 export const Home = styled.span`
@@ -43,9 +45,63 @@ export const ProjectComponent = styled.img`
   object-position: center;
 `;
 
+export const BackgroundContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  gap: 10%;
+  z-index: -2;
+`;
+
+export const Icon1 = styled.div`
+  margin-bottom: 50px;
+`;
+
+export const Icon2 = styled.div`
+  margin-top: 10px;
+`;
+
 function Hero() {
   return (
     <HeroContainer>
+      <BackgroundContainer>
+        <motion.div
+          initial={{ x: "-50vw" }}
+          animate={{ x: "0", rotate: 360 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
+          <Icon1>
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 100 100"
+              transform="scale (0.8)"
+            >
+              <polygon points="50,25 100,100 0,100" fill={"#ff9a99"} />
+            </svg>
+          </Icon1>
+        </motion.div>
+        <motion.div
+          initial={{ x: "50vw" }}
+          animate={{ x: "0", rotate: 360 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        >
+          <Icon2>
+            <svg
+              width="200"
+              height="200"
+              viewBox="0 0 100 100"
+              transform="scale (0.8) rotate(180, 0, 0)"
+            >
+              <polygon points="50,25 100,100 0,100" fill="#8cd3f7" />
+            </svg>
+          </Icon2>
+        </motion.div>
+      </BackgroundContainer>
+
       <Home>Current Projects</Home>
       <ProjectContainer>
         {project.map((project) => (
