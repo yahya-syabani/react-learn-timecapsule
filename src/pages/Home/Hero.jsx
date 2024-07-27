@@ -13,6 +13,9 @@ export const ContentContainer = styled.div`
   color: ${({ theme }) => theme.text};
   z-index: 0;
   transition: 0.8s all ease;
+  @media screen and (max-width: 430px) {
+    height: 600px;
+  }
 `;
 
 export const Home = styled.div`
@@ -24,6 +27,9 @@ export const Home = styled.div`
   @media screen and (max-width: 768px) {
     font-size: 4rem;
   }
+  @media screen and (max-width: 430px) {
+    font-size: 3rem;
+  }
 `;
 
 export const TypewriterContainer = styled.span`
@@ -34,6 +40,9 @@ export const TypewriterContainer = styled.span`
   z-index: 2;
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
+  }
+  @media screen and (max-width: 430px) {
+    font-size: 1.3rem;
   }
 `;
 

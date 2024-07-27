@@ -29,6 +29,9 @@ export const FooterLogo = styled(LinkR)`
   color: ${({ theme }) => theme.text};
   cursor: pointer;
   text-decoration: none;
+  @media screen and (max-width: 440px) {
+    display: none;
+  }
 `;
 export const Logo = styled.img`
   object-fit: contain;
@@ -54,6 +57,12 @@ export const FooterInformation = styled.div`
   gap: 1.5rem;
   margin-right: 2rem;
   width: 20rem;
+  @media screen and (max-width: 440px) {
+    justify-content: center;
+    width: 100%;
+    margin-right: 0rem;
+    margin: 20px;
+  }
 `;
 
 export const Email = styled.div`
@@ -61,8 +70,13 @@ export const Email = styled.div`
   align-items: center;
   gap: 1rem;
   font-weight: 300;
+  flex-direction: row;
   :hover {
     color: ${({ theme }) => theme.icon};
+  }
+  @media screen and (max-width: 440px) {
+    flex-direction: column;
+    gap: 0rem;
   }
 `;
 
@@ -79,8 +93,13 @@ export const Maps = styled.div`
   align-items: center;
   gap: 1rem;
   font-weight: 300;
+  flex-direction: row;
   :hover {
     color: ${({ theme }) => theme.icon};
+  }
+  @media screen and (max-width: 440px) {
+    flex-direction: column;
+    gap: 2px;
   }
 `;
 
@@ -90,4 +109,9 @@ export const MapsLogo = styled(PlaceIcon)`
 
 export const MapsInformation = styled.div`
   color: ${({ theme }) => theme.text};
+
+  @media screen and (max-width: 440px) {
+    width: 80%;
+    text-align: center;
+  }
 `;

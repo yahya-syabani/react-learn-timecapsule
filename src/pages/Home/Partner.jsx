@@ -13,6 +13,9 @@ export const PartnerContainer = styled.div`
   align-items: center;
   transition: 0.8s all ease;
   margin-bottom: 100px;
+  @media screen and (max-width: 430px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const Title = styled.div`
@@ -22,7 +25,10 @@ export const Title = styled.div`
   transition: 0.3s all ease;
   z-index: 1;
   @media screen and (max-width: 768px) {
-    font-size: 4rem;
+    font-size: 3.5rem;
+  }
+  @media screen and (max-width: 430px) {
+    font-size: 3rem;
   }
 `;
 
@@ -32,13 +38,16 @@ export const PartnerLogoContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   z-index: 1;
+  gap: 150px;
+  @media screen and (max-width: 430px) {
+    gap: 0px;
+  }
 `;
 
 export const PartnerLogo = styled.img`
   width: 200px;
   height: 200px;
   object-fit: contain;
-  margin: 60px;
   &:hover {
     scale: 1.3;
     cursor: pointer;
@@ -48,6 +57,10 @@ export const PartnerLogo = styled.img`
   @media screen and (max-width: 768px) {
     width: 150px;
     height: 150px;
+  }
+  @media screen and (max-width: 430px) {
+    margin: 20px;
+    height: 100px;
   }
 `;
 function Partner() {

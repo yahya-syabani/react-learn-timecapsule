@@ -3,6 +3,7 @@ import Hero from "../pages/About/Hero.jsx";
 import Leaders from "./About/Leaders";
 import Story from "./About/Story";
 import styled from "styled-components";
+import ScrollByPixelsButton from "./Button";
 
 export const AboutContainer = styled.div`
   display: flex;
@@ -14,8 +15,12 @@ export const AboutContainer = styled.div`
 `;
 
 function About() {
+  const scrollAmount = 100; // Scroll down by 100 pixels each click
+
   return (
     <AboutContainer>
+      <ScrollByPixelsButton scrollAmount={scrollAmount} />
+
       <Hero />
       <Story />
       <Leaders />
