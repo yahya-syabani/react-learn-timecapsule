@@ -18,7 +18,6 @@ const ScrollByPixelsButton = ({ scrollAmount }) => {
   const [buttonVisible, setButtonVisible] = useState(true);
 
   const handleScroll = () => {
-    // Check if the bottom of the page is reached
     const isBottom =
       window.innerHeight + window.scrollY >=
       document.documentElement.scrollHeight;

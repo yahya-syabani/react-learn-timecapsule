@@ -49,7 +49,7 @@ export const BackgroundContainer = styled.div`
   width: 100%;
   display: flex;
   margin-top: 100px;
-  z-index: -2;
+  z-index: -1;
   justify-content: space-around;
   gap: 40%;
   transition: 0.3s all ease;
@@ -58,6 +58,8 @@ export const BackgroundContainer = styled.div`
     scale: 0.8;
     align-items: flex-end;
     margin-top: 50px;
+    width: 430px;
+    overflow-y: hidden;
   }
 `;
 

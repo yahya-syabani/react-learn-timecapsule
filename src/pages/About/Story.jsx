@@ -103,6 +103,8 @@ export const BackgroundContainer = styled.div`
     scale: 0.8;
     align-items: flex-end;
     margin-top: 50px;
+    width: 430px;
+    overflow-y: hidden;
   }
 `;
 

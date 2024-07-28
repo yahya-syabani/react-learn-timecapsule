@@ -4,6 +4,7 @@ export const darkTheme = {
   texthover: "#70D2F6",
   footerbg: "#0277b5",
   icon: "#70D2F6",
+  iconbg: "#FFFFFF",
 };
 
 export const lightTheme = {
@@ -12,6 +13,7 @@ export const lightTheme = {
   texthover: "#0277b5",
   footerbg: "#fffbf8",
   icon: "#FF9898",
+  iconbg: "",
 };
 
 // pink #FF9898

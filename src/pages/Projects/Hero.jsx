@@ -32,6 +32,7 @@ export const ProjectContainer = styled.div`
   margin: 60px;
   object-position: center;
   justify-content: center;
+  gap: 60px;
   @media screen and (max-width: 768px) {
     flex-wrap: wrap;
     transition: 0.8s all ease;
@@ -65,6 +66,40 @@ export const Icon1 = styled.div`
 
 export const Icon2 = styled.div`
   margin-top: 10px;
+`;
+
+export const ImageContainer = styled.div`
+  width: 400px;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.iconbg};
+  &:hover {
+    scale: 1.02;
+    background-color: #334366;
+    transition: 0.3s all ease;
+  }
+`;
+
+export const ImageDescription = styled.div`
+  display: none;
+  transition: 1s all ease;
+  ${ImageContainer}:hover & {
+    display: block;
+    transition: 1s all ease;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    font-style: italic;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 22px;
+    z-index: 1;
+  }
 `;
 
 function Hero() {
@@ -108,7 +143,10 @@ function Hero() {
       <Home>Current Projects</Home>
       <ProjectContainer>
         {project.map((project) => (
-          <ProjectComponent src={project.img} />
+          <ImageContainer>
+            <ProjectComponent src={project.img} />
+            <ImageDescription>{project.description}</ImageDescription>
+          </ImageContainer>
         ))}
       </ProjectContainer>
     </HeroContainer>
