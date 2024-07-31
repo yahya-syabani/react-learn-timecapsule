@@ -10,7 +10,7 @@ export const AboutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  gap: 8rem;
+  gap: 8.1rem;
   transition: 0.8s all ease;
 `;
 
