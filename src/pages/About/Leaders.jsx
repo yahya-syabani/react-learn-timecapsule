@@ -53,6 +53,7 @@ export const ImageContainer = styled.div`
   height: 300px;
   position: relative;
   align-items: center;
+  text-align: center;
   &:hover {
     scale: 1.02;
   }
@@ -60,6 +61,8 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  align-items: center;
+  text-align: center;
   width: 400px;
   height: 300px;
   object-fit: cover;
@@ -122,12 +125,7 @@ export const BackgroundContainer = styled.div`
   gap: 40%;
   transition: 0.3s all ease;
   @media screen and (max-width: 768px) {
-    margin-left: -10px;
-    scale: 0.8;
-    align-items: flex-end;
-    margin-top: 250px;
-    width: 430px;
-    overflow-y: hidden;
+    display: hidden;
   }
 `;
 

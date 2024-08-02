@@ -12,6 +12,8 @@ import {
   LogoText,
   ButtonContainer,
   SearchContainer,
+  MobileMenu,
+  MobileLink,
 } from "./NavbarStyle";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -20,10 +22,19 @@ import { useTheme } from "../utils/ThemeProvider";
 
 function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const [isOpen, setIsOpen] = React.useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
     });
+  };
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+    });
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -37,7 +48,11 @@ function Navbar() {
           </LogoText>
         </NavLogo>
         <MobileIcon>
-          <MenuIcon />
+          <MenuIcon
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          />
         </MobileIcon>
         <NavItems>
           <NavLink onClick={scrollToTop} exact to="/">
@@ -59,6 +74,22 @@ function Navbar() {
             <Switch onClick={toggleTheme} />
           </ButtonContainer>
         </NavItems>
+        {isOpen && (
+          <MobileMenu isOpen={isOpen}>
+            <MobileLink exact to="/" onClick={handleClick}>
+              Home
+            </MobileLink>
+            <MobileLink exact to="/About" onClick={handleClick}>
+              About
+            </MobileLink>
+            <MobileLink exact to="/Projects" onClick={handleClick}>
+              Project
+            </MobileLink>
+            <MobileLink exact to="/Contacts" onClick={handleClick}>
+              Contacts
+            </MobileLink>
+          </MobileMenu>
+        )}
       </NavbarContainer>
     </Nav>
   );

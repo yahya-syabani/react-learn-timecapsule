@@ -20,7 +20,6 @@ function About() {
   return (
     <AboutContainer>
       <ScrollByPixelsButton scrollAmount={scrollAmount} />
-
       <Hero />
       <Story />
       <Leaders />

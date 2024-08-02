@@ -130,7 +130,7 @@ function Story() {
           </TimelineComponent>
         ))}
       </TimelineContainer>
-      <BackgroundContainer>
+      {/* <BackgroundContainer>
         <motion.div
           initial={{ x: "-50vw" }}
           animate={{ x: "0", rotate: 360 }}
@@ -163,7 +163,7 @@ function Story() {
             </svg>
           </Icon2>
         </motion.div>
-      </BackgroundContainer>
+      </BackgroundContainer> */}
     </StoryContainer>
   );
 }

@@ -44,6 +44,9 @@ export const ProjectComponent = styled.img`
   height: 250px;
   object-fit: contain;
   object-position: center;
+  @media screen and (max-width: 768px) {
+    height: 150px;
+  }
 `;
 
 export const BackgroundContainer = styled.div`
@@ -70,11 +73,13 @@ export const Icon2 = styled.div`
 
 export const ImageContainer = styled.div`
   width: 400px;
-  height: 100%;
   position: relative;
   align-items: center;
   border-radius: 50px;
   background-color: ${({ theme }) => theme.iconbg};
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
   &:hover {
     scale: 1.02;
     background-color: #334366;

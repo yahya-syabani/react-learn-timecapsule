@@ -64,11 +64,11 @@ export const NavItems = styled.div`
   padding: 0 6px;
   list-style: none;
   margin-right: 4rem;
+  margin-left: 4rem;
   transition: 0.3s all ease;
   &:hover {
     color: ${({ theme }) => theme.texthover};
   }
-
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -84,9 +84,6 @@ export const NavLink = styled(LinkR)`
   &:hover {
     color: ${({ theme }) => theme.texthover};
   }
-  &.active {
-    color: ${({ theme }) => theme.texthover};
-  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -96,6 +93,10 @@ export const ButtonContainer = styled.div`
 export const SearchContainer = styled.div`
   margin-top: 6px;
   color: ${({ theme }) => theme.text};
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.texthover};
+  }
 `;
 
 export const MobileIcon = styled.div`
@@ -104,11 +105,41 @@ export const MobileIcon = styled.div`
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
-    top: 50px;
+    top: 30px;
     right: 20px;
     transform: translate(-100%, 60%);
     font-size: 1.5rem;
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
+`;
+
+export const MobileMenu = styled.div`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 100%;
+    :hover {
+      color: ${({ theme }) => theme.texthover};
+    }
+    padding: 12px 40px 54px 40px;
+    background-color: ${({ theme }) => theme.bg};
+    transition: all 0.6s ease-in-out;
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateY(0)" : "translateY(-100%)"};
+  }
+`;
+
+export const MobileLink = styled(LinkR)`
+  color: ${({ theme }) => theme.text};
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
 `;

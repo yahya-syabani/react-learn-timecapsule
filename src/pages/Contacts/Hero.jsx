@@ -8,7 +8,6 @@ export const HeroContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
   transition: 0.3s all ease;
   z-index: 1;
@@ -28,6 +27,10 @@ export const ContentContainer = styled.div`
   padding: 50px;
   border-radius: 50px;
   gap: 50px;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+    height: 70%;
+  }
 `;
 export const Title = styled.span`
   width: 100%;
@@ -35,13 +38,17 @@ export const Title = styled.span`
   font-weight: 600;
   text-align: center;
   @media screen and (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2rem;
     transition: 0.8s all ease;
   }
 `;
 export const InformationContainer = styled.div`
   padding-inline-start: 80px;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    padding-inline-start: 0px;
+  }
 `;
 export const EmailContainer = styled.div`
   display: flex;
@@ -49,6 +56,7 @@ export const EmailContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 export const LocationContainer = styled.div`
   display: flex;
   align-items: flex-start;
@@ -85,6 +93,8 @@ export const TextContainer = styled.span`
   @media screen and (max-width: 768px) {
     font-size: 1rem;
     transition: 0.8s all ease;
+    padding-right: 0%;
+    display: flex;
   }
 `;
 function Hero() {
